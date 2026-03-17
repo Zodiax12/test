@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://djo0bklys1m08"]
 
 [ext_resource type="Texture2D" uid="uid://bosgt2ejrr4mg" path="res://grafiki/szczur.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://bd0wnrr46afia" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bd0wnrr46afia" path="res://postacie/glowny_bohater/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://c8i0k5e05kktq" path="res://narzedzia/mieczyk_test/mieczyk_myszka.tscn" id="3_i3pqv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -20,12 +21,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
-size = Vector2(20, 10)
+size = Vector2(200, 94)
 
 [node name="Player" type="Area2D" unique_id=941468728]
 script = ExtResource("1_onrkg")
 speed = 400
 metadata/_edit_group_ = true
+
+[node name="mieczyk_myszka" parent="." unique_id=849206734 instance=ExtResource("3_i3pqv")]
+position = Vector2(-8, 75)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1842714776]
 position = Vector2(0, -10)
@@ -34,4 +38,5 @@ sprite_frames = SubResource("SpriteFrames_onrkg")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=673596301]
+position = Vector2(0, 93)
 shape = SubResource("RectangleShape2D_i3pqv")

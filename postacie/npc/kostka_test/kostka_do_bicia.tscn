@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bf4rfpcm1qulp"]
+
+[ext_resource type="Script" uid="uid://dlickvsuof2kh" path="res://postacie/npc/kostka_test/kostka_do_bicia.gd" id="1_860r3"]
+[ext_resource type="Texture2D" uid="uid://lo573ehi77hb" path="res://icon.svg" id="2_6y3vu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogffn"]
+size = Vector2(128, 128)
+
+[node name="kostka do bicia" type="StaticBody2D" unique_id=1662566616]
+script = ExtResource("1_860r3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=163500981]
+texture = ExtResource("2_6y3vu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=922934473]
+shape = SubResource("RectangleShape2D_ogffn")

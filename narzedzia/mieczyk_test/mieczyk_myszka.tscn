@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c8i0k5e05kktq"]
+
+[ext_resource type="Script" uid="uid://djv7bthfodykp" path="res://narzedzia/mieczyk_test/mieczyk_myszka.gd" id="1_hbqn1"]
+[ext_resource type="Texture2D" uid="uid://1eg51s6buofg" path="res://grafiki/mieczyk.png" id="2_p11rv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5dj86"]
+radius = 28.0
+height = 136.0
+
+[node name="mieczyk_myszka" type="Node2D" unique_id=849206734]
+script = ExtResource("1_hbqn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=86830552]
+position = Vector2(84, -9.345001)
+rotation = 1.5707964
+scale = Vector2(11.500001, 11.500001)
+texture = ExtResource("2_p11rv")
+offset = Vector2(0.695, 0.095)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=900783]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=403342995]
+position = Vector2(120, -1)
+shape = SubResource("CapsuleShape2D_5dj86")
+disabled = true
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cblflxq47vswi"]
+
+[ext_resource type="PackedScene" uid="uid://bf4rfpcm1qulp" path="res://postacie/npc/kostka_test/kostka_do_bicia.tscn" id="2_co5gq"]
+[ext_resource type="PackedScene" uid="uid://djo0bklys1m08" path="res://postacie/glowny_bohater/player.tscn" id="2_wt6po"]
+
+[node name="Tło" type="Node2D" unique_id=308114625]
+
+[node name="kostka do bicia" parent="." unique_id=1662566616 instance=ExtResource("2_co5gq")]
+position = Vector2(819, 132)
+
+[node name="Player" parent="." unique_id=941468728 instance=ExtResource("2_wt6po")]
+position = Vector2(246, 121)
