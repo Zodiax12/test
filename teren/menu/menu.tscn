@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c4bp3h3n3rmfn"]
+
+[ext_resource type="Script" uid="uid://b3yta7eajnbgy" path="res://teren/menu/menu.gd" id="1_2ed5y"]
+[ext_resource type="Texture2D" uid="uid://srswv5fmvfsa" path="res://grafiki/Start.png" id="1_liaxw"]
+[ext_resource type="Texture2D" uid="uid://cnpdhl0sqg7m3" path="res://grafiki/koniec.png" id="3_vamqs"]
+
+[sub_resource type="GDScript" id="GDScript_m0hrg"]
+script/source = "extends MenuButton"
+
+[node name="Menu" type="Control" unique_id=583254139]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ed5y")
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1594194849]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 162.0
+offset_right = 655.0
+offset_bottom = 239.0
+icon = ExtResource("1_liaxw")
+
+[node name="MenuButton2" type="MenuButton" parent="." unique_id=461837674]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 277.0
+offset_right = 656.0
+offset_bottom = 354.0
+icon = ExtResource("3_vamqs")
+script = SubResource("GDScript_m0hrg")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MenuButton2" to="." method="_on_menu_button_2_pressed"]

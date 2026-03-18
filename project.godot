@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Gra"
 config/description="Gra"
-run/main_scene="uid://cblflxq47vswi"
+run/main_scene="uid://c4bp3h3n3rmfn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
