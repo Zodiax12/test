@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c3lfl80pbeqw1"]
+
+[ext_resource type="Script" uid="uid://dauk62oxqasos" path="res://postacie/enemys/enemy_teścik.gd" id="1_rr1iv"]
+[ext_resource type="Texture2D" uid="uid://88n2f8e0g5s6" path="res://grafiki/enemy.png" id="2_lk22o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rr1iv"]
+radius = 237.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=480396833]
+script = ExtResource("1_rr1iv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=673965855]
+position = Vector2(49, 49)
+scale = Vector2(7.125, 7.125)
+texture = ExtResource("2_lk22o")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=928268481]
+position = Vector2(44, 57)
+target_position = Vector2(96, -1)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=850518281]
+position = Vector2(2, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="DetectionArea" type="CollisionShape2D" parent="DetectionArea" unique_id=1279436819]
+position = Vector2(48, 48)
+shape = SubResource("CircleShape2D_rr1iv")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

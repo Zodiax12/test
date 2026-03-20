@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://cblflxq47vswi"]
 
-[ext_resource type="Script" uid="uid://c7mivor857j7v" path="res://teren/1 poziom/tło.gd" id="1_ii2ad"]
+[ext_resource type="Script" path="res://teren/1 poziom/tło.gd" id="1_ii2ad"]
 [ext_resource type="PackedScene" uid="uid://bf4rfpcm1qulp" path="res://postacie/npc/kostka_test/kostka_do_bicia.tscn" id="2_co5gq"]
+[ext_resource type="PackedScene" uid="uid://c3lfl80pbeqw1" path="res://postacie/enemys/enemy_test.tscn" id="2_d8qfl"]
 [ext_resource type="PackedScene" uid="uid://djo0bklys1m08" path="res://postacie/glowny_bohater/player.tscn" id="2_wt6po"]
 
 [node name="Tło" type="Node2D" unique_id=308114625]
 script = ExtResource("1_ii2ad")
 
+[node name="CharacterBody2D" parent="." unique_id=480396833 instance=ExtResource("2_d8qfl")]
+position = Vector2(808, 253)
+collision_layer = 3
+collision_mask = 3
+
 [node name="kostka do bicia" parent="." unique_id=1662566616 instance=ExtResource("2_co5gq")]
-position = Vector2(819, 132)
+position = Vector2(108, 567)
 
 [node name="Player" parent="." unique_id=941468728 instance=ExtResource("2_wt6po")]
 position = Vector2(246, 121)
